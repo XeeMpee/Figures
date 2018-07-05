@@ -1,4 +1,4 @@
-public class Line {
+public class Line extends Figure{
     // Members:
     private double a;
     private double b;
@@ -25,5 +25,12 @@ public class Line {
 
     public double getInterpolatedPoint(double x){
         return (double) this.a * x + this.b;
+    }
+
+    public void generateLine(int x1, int x2, int step){
+        for(int i=x1; i<x2; i+=step){
+            Point newPoint = new Point((int)i, (int)(a*i+b));
+            this.points.add(newPoint);
+        }
     }
 }
