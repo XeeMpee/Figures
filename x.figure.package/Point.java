@@ -1,3 +1,4 @@
+import java.util.Comparator;
 
 /*
 Point class is a class that represents Cartesion Point:
@@ -45,6 +46,10 @@ public class Point {
 
     public int get_y(){
         return this.coords[1];
+    }
+
+    public void printPoint(){
+        System.out.println("("+ this.coords[0] + "," + this.coords[1] + ")");
     }
 
 }

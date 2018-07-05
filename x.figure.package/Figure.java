@@ -2,13 +2,15 @@ import java.util.ArrayList;
 
 public class Figure {
     // Members:
-    protected ArrayList<Integer[]> points = new ArrayList<Integer[]>();
+    protected ArrayList<Point> points;
     
-    // Methods:
+    
+    // Constructor:
     public Figure(){
-        
+        this.points= new ArrayList<Point>();
     }
 
+    // Methods:
     public void draw() {
         System.out.println("Drawing figure");
     }
