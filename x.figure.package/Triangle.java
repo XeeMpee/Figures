@@ -59,7 +59,7 @@ public class Triangle extends Figure {
         this.B = arrayPointsABC.get(1);
         this.C = arrayPointsABC.get(2);
 
-
+        // Creating lines delineating a triangle:
         double a1 = (this.B.get_y() - this.A.get_y()) / (this.B.get_x() - this.A.get_x());
         double b1 = this.A.get_y() - a1*A.get_x();
         Line line1 = new Line(a1, b1);
@@ -72,11 +72,15 @@ public class Triangle extends Figure {
         double b3 = this.A.get_y() - a1*A.get_x();
         Line line3 = new Line(a3, b3);
 
+        // Generating points laying on lines delineating a triangle:
         line1.generateLine(A.get_x(), B.get_x(), step);
         line2.generateLine(A.get_x(), C.get_x(), step);
         line3.generateLine(B.get_x(), C.get_x(), step);
 
-        // TODO: złącz punkty z kazdej lini w punkty obiektu Trójkąta
+        // Connecting points laying on lines:
+        this.points.addAll(line1.getPoints());
+        this.points.addAll(line2.getPoints());
+        this.points.addAll(line3.getPoints());
 
 
     }
