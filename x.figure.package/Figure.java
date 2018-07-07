@@ -29,4 +29,8 @@ public class Figure {
         
     }
 
+    public void generateFigure(int step){
+
+    }
+
 }
