@@ -9,7 +9,7 @@ public class Main {
         figure2.generateFigure(1);
         figure2.print();
     
-        Screen newScreen = new Screen(90, 90, '.', '*');
+        Screen newScreen = new Screen(60, 60, '.', '*', true);
         
         figure2.draw(newScreen);
 

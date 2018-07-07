@@ -73,7 +73,7 @@ public class Screen {
     public void placePoints(ArrayList<Point> pointArray){
         for(Point i : pointArray){
             Point tmpPoint = offsetPoint(i);
-            this.Table[tmpPoint.get_x()][tmpPoint.get_y()] = this.drawedSign;
+            this.Table[tmpPoint.get_y()][tmpPoint.get_x()] = this.drawedSign;
         }
     }
 

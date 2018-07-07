@@ -60,22 +60,22 @@ public class Triangle extends Figure {
         this.C = arrayPointsABC.get(2);
 
         // Creating lines delineating a triangle:
-        double a1 = (this.B.get_y() - this.A.get_y()) / (this.B.get_x() - this.A.get_x());
+        double a1 = (double)(this.B.get_y() - this.A.get_y()) / (this.B.get_x() - this.A.get_x());
         double b1 = this.A.get_y() - a1*A.get_x();
         Line line1 = new Line(a1, b1);
 
-        double a2 = (this.C.get_y() - this.B.get_y()) / (this.C.get_x() - this.B.get_x());
+        double a2 = (double)(this.C.get_y() - this.B.get_y()) / (this.C.get_x() - this.B.get_x());
         double b2 = this.B.get_y() - a2*B.get_x();
         Line line2 = new Line(a2, b2);
 
-        double a3 = (this.C.get_y() - this.A.get_y()) / (this.C.get_x() - this.A.get_x());
+        double a3 = (double)(this.A.get_y() - this.C.get_y()) / (this.A.get_x() - this.C.get_x());
         double b3 = this.A.get_y() - a3*A.get_x();
         Line line3 = new Line(a3, b3);
 
         // Generating points laying on lines delineating a triangle:
         line1.generateLine(A.get_x(), B.get_x(), step);
-        line2.generateLine(A.get_x(), C.get_x(), step);
-        line3.generateLine(B.get_x(), C.get_x(), step);
+        line2.generateLine(B.get_x(), C.get_x(), step);
+        line3.generateLine(A.get_x(), C.get_x(), step);
 
         // Connecting points laying on lines:
         this.points.addAll(line1.getPoints());
