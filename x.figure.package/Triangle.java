@@ -65,11 +65,11 @@ public class Triangle extends Figure {
         Line line1 = new Line(a1, b1);
 
         double a2 = (this.C.get_y() - this.B.get_y()) / (this.C.get_x() - this.B.get_x());
-        double b2 = this.B.get_y() - a1*B.get_x();
+        double b2 = this.B.get_y() - a2*B.get_x();
         Line line2 = new Line(a2, b2);
 
         double a3 = (this.C.get_y() - this.A.get_y()) / (this.C.get_x() - this.A.get_x());
-        double b3 = this.A.get_y() - a1*A.get_x();
+        double b3 = this.A.get_y() - a3*A.get_x();
         Line line3 = new Line(a3, b3);
 
         // Generating points laying on lines delineating a triangle:
@@ -83,5 +83,11 @@ public class Triangle extends Figure {
         this.points.addAll(line3.getPoints());
 
 
+    }
+
+    @Override
+    public void draw(Screen screen){
+        screen.placePoints(this.points);
+        screen.draw();
     }
 }

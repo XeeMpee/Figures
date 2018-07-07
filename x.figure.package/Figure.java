@@ -25,4 +25,8 @@ public class Figure {
         System.out.println(output);
     }
 
+    public void draw(Screen screen){
+        
+    }
+
 }
