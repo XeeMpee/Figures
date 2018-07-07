@@ -28,7 +28,18 @@ public class Line extends Figure{
     }
 
     public void generateLine(int x1, int x2, int step){
-        for(int i=x1; i<x2; i+=step){
+        int startX;
+        int endX;
+        
+        if(x1 <= x2){
+            startX = x1;
+            endX = x2;
+        } else {
+            startX = x2;
+            endX = x1;
+        }
+
+        for(int i=startX; i<endX; i+=step){
             Point newPoint = new Point((int)i, (int)(a*i+b));
             this.points.add(newPoint);
         }

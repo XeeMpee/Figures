@@ -25,8 +25,12 @@ public class Figure {
         System.out.println(output);
     }
 
-    public void draw(Screen screen){
+    public void draw(Screen screen, int step){
         
+    }
+
+    public void draw(Screen screen){
+        this.draw(screen, 1);
     }
 
     public void generateFigure(int step){
