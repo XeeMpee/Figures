@@ -37,27 +37,11 @@ public class Triangle extends Figure {
     }
 
     // Methods:
+    @Override
     public void generateFigure(int step){
         // Line AB
         // Line BC
         // Line CA
-
-        // TODO: Move sorting into Constructor code block!
-        ArrayList<Point> arrayPointsABC = new ArrayList<Point>();
-        arrayPointsABC.add(this.A);
-        arrayPointsABC.add(this.B);
-        arrayPointsABC.add(this.C);
-        // Sorting
-        Collections.sort(arrayPointsABC, new Comparator<Point>() {
-        @Override
-        public int compare(Point p1, Point p2) {
-                return  ((Integer)p1.get_x()).compareTo(p2.get_x());
-            }
-        });
-        
-        this.A = arrayPointsABC.get(0);
-        this.B = arrayPointsABC.get(1);
-        this.C = arrayPointsABC.get(2);
 
         // Creating lines delineating a triangle:
         double a1 = (double)(this.B.get_y() - this.A.get_y()) / (this.B.get_x() - this.A.get_x());
