@@ -69,15 +69,4 @@ public class Triangle extends Figure {
 
     }
 
-    @Override
-    public void draw(Screen screen, int step){
-        this.generateFigure(step);
-        screen.placePoints(this.points);
-        screen.draw();
-    }
-
-    @Override
-    public void draw(Screen screen){
-        this.draw(screen, 1);    
-    }
 }

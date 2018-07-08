@@ -26,7 +26,9 @@ public class Figure {
     }
 
     public void draw(Screen screen, int step){
-        
+        this.generateFigure(step);
+        screen.placePoints(this.points);
+        screen.draw();
     }
 
     public void draw(Screen screen){
@@ -35,6 +37,10 @@ public class Figure {
 
     public void generateFigure(int step){
 
+    }
+
+    public void generateFigure(){
+        this.generateFigure(1);
     }
 
 }
