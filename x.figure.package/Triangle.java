@@ -43,28 +43,59 @@ public class Triangle extends Figure {
         // Line BC
         // Line CA
 
-        // Creating lines delineating a triangle:
-        double a1 = (double)(this.B.get_y() - this.A.get_y()) / (this.B.get_x() - this.A.get_x());
-        double b1 = this.A.get_y() - a1*A.get_x();
-        Line line1 = new Line(a1, b1);
+        Line line1 = null;
+        Line line2 = null;
+        Line line3 = null;
 
+        // Creating lines delineating a triangle:
+        if(this.B.get_x() == this.A.get_x()){
+            for(int i=Math.min(B.get_y(), A.get_y()); i<= Math.max(B.get_y(), A.get_y()); i+=step){
+                this.points.add(new Point(this.A.get_x(), i));
+            }
+        } else {
+            double a1 = (double)(this.B.get_y() - this.A.get_y()) / (this.B.get_x() - this.A.get_x());
+            double b1 = this.A.get_y() - a1*A.get_x();
+            line1 = new Line(a1, b1);
+        }
+
+        if(this.C.get_x() == this.B.get_x()){
+            for(int i=Math.min(C.get_y(), B.get_y()); i<= Math.max(C.get_y(), B.get_y()); i+=step){
+                this.points.add(new Point(this.C.get_x(), i));
+            }
+        } else {
         double a2 = (double)(this.C.get_y() - this.B.get_y()) / (this.C.get_x() - this.B.get_x());
         double b2 = this.B.get_y() - a2*B.get_x();
-        Line line2 = new Line(a2, b2);
+        line2 = new Line(a2, b2);
+        }
 
+        if(this.A.get_x() == this.C.get_x()){
+            for(int i=Math.min(A.get_y(), C.get_y()); i<= Math.max(A.get_y(), C.get_y()); i+=step){
+                this.points.add(new Point(this.A.get_x(), i));
+            }
+        } else {
         double a3 = (double)(this.A.get_y() - this.C.get_y()) / (this.A.get_x() - this.C.get_x());
         double b3 = this.A.get_y() - a3*A.get_x();
-        Line line3 = new Line(a3, b3);
+        line3 = new Line(a3, b3);
+        }
 
-        // Generating points laying on lines delineating a triangle:
-        line1.generateLine(A.get_x(), B.get_x(), step);
-        line2.generateLine(B.get_x(), C.get_x(), step);
-        line3.generateLine(A.get_x(), C.get_x(), step);
-
+        // Generating points laying on lines delineating a triangle and
         // Connecting points laying on lines:
-        this.points.addAll(line1.getPoints());
-        this.points.addAll(line2.getPoints());
-        this.points.addAll(line3.getPoints());
+        if(line1 != null){
+            line1.generateLine(A.get_x(), B.get_x(), step);
+            this.points.addAll(line1.getPoints());
+        }
+        
+        if(line2 != null){
+            line2.generateLine(B.get_x(), C.get_x(), step);
+            this.points.addAll(line2.getPoints());
+        }
+
+        if(line3 != null){
+            line3.generateLine(A.get_x(), C.get_x(), step);
+            this.points.addAll(line3.getPoints());
+        }
+
+      
 
 
     }

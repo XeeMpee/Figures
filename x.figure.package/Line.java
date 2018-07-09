@@ -44,4 +44,5 @@ public class Line extends Figure{
             this.points.add(newPoint);
         }
     }
+    
 }

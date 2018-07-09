@@ -5,7 +5,7 @@ public class Main {
 
         Screen screen = new Screen(60, 60, '.', '*', true);
         
-        Triangle triangle = new Triangle(new Point(12,14),new Point(-14,3),new Point(0,0));
+        Triangle triangle = new Triangle(new Point(-14,14),new Point(-14,3),new Point(0,0));
         triangle.draw(screen);
 
         Circle circle = new Circle(new Point(-14,-12),10);
