@@ -53,12 +53,15 @@ public class Quadrangle extends Figure {
         // Generating points laying on lines delineating a triangle:
         line1.generateLine(A.get_x(), B.get_x(), step);
         line2.generateLine(B.get_x(), C.get_x(), step);
-        line3.generateLine(A.get_x(), C.get_x(), step);
+        line3.generateLine(C.get_x(), D.get_x(), step);
+        line4.generateLine(D.get_x(), A.get_x(), step);
+
         
         // Connecting points laying on lines:
         this.points.addAll(line1.getPoints());
         this.points.addAll(line2.getPoints());
         this.points.addAll(line3.getPoints());
+        this.points.addAll(line4.getPoints());
     }
 
 
