@@ -21,7 +21,7 @@ public class Triangle extends Figure {
         this.C = C;
     }
 
-    public Triangle(int[] A, int[] B, int[] C){
+    public Triangle(int[] A, int[] B, int[] C, int[] D){
         super();
         if(A.length != 2 || B.length != 2 || C.length != 2){
             Error e = new Error("Points is an one dimension table with two records: [x,y]!");
