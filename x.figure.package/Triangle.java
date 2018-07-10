@@ -9,9 +9,9 @@ import javax.management.RuntimeErrorException;
 public class Triangle extends Figure {
     
     // Members:
-    Point A;
-    Point B;
-    Point C;
+    private Point A;
+    private Point B;
+    private Point C;
     
     // Constructors:
     public Triangle(Point A, Point B, Point C){

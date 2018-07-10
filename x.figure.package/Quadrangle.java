@@ -1,8 +1,8 @@
 public class Quadrangle extends Figure {
-    private Point A;
-    private Point B;
-    private Point C;
-    private Point D;
+    protected Point A;
+    protected Point B;
+    protected Point C;
+    protected Point D;
 
     public Quadrangle(){
         super();
