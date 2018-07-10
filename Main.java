@@ -13,5 +13,7 @@ public class Main {
 
         Quadrangle quadrangle = new Quadrangle(new Point(10,15),new Point(20,15),new Point(15,20),new Point(5,20));
         quadrangle.draw(screen);
+
+        Rectangle rectangle = new Rectangle(12,6,new Point(-40, 20),Placement.leftdowncorner);
     }
 }

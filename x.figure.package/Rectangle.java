@@ -35,13 +35,11 @@ public class Rectangle extends Quadrangle{
             break;
 
             case center:
-            this.A = new Point(placementPoint.get_x() - 0.5*a, placementPoint.get_y() - 0.5*b);
-            this.B = new Point(placementPoint.get_x() + 0.5*a, placementPoint.get_y() - 0.5*b);
-            this.C = new Point(placementPoint.get_x() + 0.5*a, placementPoint.get_y() + 0.5*b);
-            this.D = new Point(placementPoint.get_x() - 0.5*a, placementPoint.get_y() + 0.5*b);
-            
-            
-
+            this.A = new Point((int)(placementPoint.get_x() - 0.5*a), ((int)(placementPoint.get_y() - 0.5*b)));
+            this.B = new Point((int)(placementPoint.get_x() + 0.5*a), ((int)(placementPoint.get_y() - 0.5*b)));
+            this.C = new Point((int)(placementPoint.get_x() + 0.5*a), ((int)(placementPoint.get_y() + 0.5*b)));
+            this.D = new Point((int)(placementPoint.get_x() - 0.5*a), ((int)(placementPoint.get_y() + 0.5*b)));
+            break;
         }
     }
 
