@@ -5,6 +5,7 @@ public class Rectangle extends Quadrangle{
     }
 
     Rectangle(int a, int b, Point placementPoint, Placement placement){
+        super();
         switch(placement){
             case leftdowncorner:
             this.A = placementPoint;
