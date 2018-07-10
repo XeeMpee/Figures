@@ -4,8 +4,8 @@ public class Square extends Rectangle {
     Point C;
     Point D;
 
-    public Square(Point A){
-        super();
-        this.A = A;
+    public Square(int a, Point placementPoint, Placement placement){
+        super(a,a,placementPoint,placement);
+        
     }
 }
