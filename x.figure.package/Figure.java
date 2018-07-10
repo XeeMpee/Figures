@@ -31,6 +31,11 @@ public class Figure {
         screen.draw();
     }
 
+    public void placeFigureOnScreen(Screen screen){
+        this.generateFigure();
+        screen.placePoints(this.points);
+    }
+
     public void draw(Screen screen){
         this.draw(screen, 1);
     }
