@@ -34,8 +34,9 @@ public class Main {
 
         //------------------------------------<interface>
         figuresList.clear();
-        Scanner scaner = new Scanner(System.in);
+        screen.clear();
         boolean loopCond = true;
+        Scanner scaner = new Scanner(System.in);
         while(loopCond){
             printMenu();
             int choose = Integer.parseInt(scaner.nextLine());
@@ -56,13 +57,13 @@ public class Main {
                 addSquare(figuresList);
                 break;
                 case 6:
-                clearScreen(screen);;
+                clearScreen(screen, figuresList);;
                 break;
                 case 7:
                 screen = newScreen();
                 break;
                 case 8:
-                draw(screen);
+                draw(screen, figuresList);
                 break;
                 case 9:
                 loopCond = quit();
@@ -70,11 +71,9 @@ public class Main {
                 default:
                 break;
             }
-            scaner.close();
         }
 
 
-        //------------------------------------</interface>
 
     }
 
@@ -114,7 +113,6 @@ public class Main {
         
         Triangle triangle = new Triangle(new Point(Ax,Ay),new Point(Bx,By),new Point(Cx,Cy));
         list.add(triangle);   
-        scaner.close(); 
     }
 
     public static void addCircle(ArrayList<Figure> list){
@@ -132,7 +130,6 @@ public class Main {
         
         Circle circle = new Circle(new Point(Sx,Sy),r);
         list.add(circle);    
-        scaner.close();
     }
 
     public static void addQuadrangle(ArrayList<Figure> list){
@@ -164,7 +161,6 @@ public class Main {
         
         Quadrangle quadrangle = new Quadrangle(new Point(Ax,Ay),new Point(Bx,By),new Point(Cx,Cy),new Point(Dx,Dy));
         list.add(quadrangle);
-        scaner.close();    
     }
 
     public static int choosePlacementOptions(){
@@ -179,7 +175,6 @@ public class Main {
         while(choose > 5 || choose < 1){
             choose = choosePlacementOptions();
         }
-        scaner.close();
         return choose;
     }
     
@@ -201,7 +196,7 @@ public class Main {
 
         int placementOption = choosePlacementOptions();
         Placement placement;
-        switch(placement){
+        switch(placementOption){
             case 1:
             placement = Placement.leftdowncorner;
             break;
@@ -217,10 +212,12 @@ public class Main {
             case 5:
             placement = Placement.center;
             break;
+            default:
+            placement = Placement.center;
+            break;
         }
         Rectangle rectangle = new Rectangle(a,b, new Point(Px, Py),placement);
         list.add(rectangle); 
-        scaner.close();   
     }
 
     public static void addSquare(ArrayList<Figure> list){
@@ -239,7 +236,7 @@ public class Main {
 
         int placementOption = choosePlacementOptions();
         Placement placement;
-        switch(placement){
+        switch(placementOption){
             case 1:
             placement = Placement.leftdowncorner;
             break;
@@ -255,13 +252,15 @@ public class Main {
             case 5:
             placement = Placement.center;
             break;
+            default:
+            placement = Placement.center;
         }
         Square square = new Square(a, new Point(Px,Py), placement);
         list.add(square);
-        scaner.close();    
     }
 
-    public static void clearScreen(Screen screen){
+    public static void clearScreen(Screen screen, ArrayList<Figure> list){
+        list.clear();
         screen.clear();
     }
 
@@ -288,13 +287,15 @@ public class Main {
         } else {
             axises = false;
         }
-        scaner.close();
 
         Screen screen = new Screen(width, height, backgroundSign, figureSign, axises);
         return screen;
     }
 
-    public static void draw(Screen screen){
+    public static void draw(Screen screen, ArrayList<Figure> list){
+        for(Figure i : list){
+            i.placeFigureOnScreen(screen);
+        }
         screen.draw();
     }
 
@@ -302,5 +303,8 @@ public class Main {
         System.out.println("Thank you for your time! Hope you enjoyed.");
         return false;
     }
+
+    //------------------------------------</interface>
+
 
 }
