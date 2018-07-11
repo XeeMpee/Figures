@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Figure {
+abstract class Figure {
     // Members:
     protected ArrayList<Point> points;
     
